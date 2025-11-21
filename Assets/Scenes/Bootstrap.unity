@@ -281,6 +281,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.75
       objectReference: {fileID: 0}
+    - target: {fileID: 3741726900884754820, guid: 17b7ab8a32101994c80764524384575a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741726900884754820, guid: 17b7ab8a32101994c80764524384575a, type: 3}
+      propertyPath: m_GridSnapping
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5754394970372541973, guid: 17b7ab8a32101994c80764524384575a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.044271
@@ -347,7 +355,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9203675553613839618, guid: 17b7ab8a32101994c80764524384575a, type: 3}
       propertyPath: orthographic size
-      value: 6.6
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203675553613839618, guid: 17b7ab8a32101994c80764524384575a, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203675553613839618, guid: 17b7ab8a32101994c80764524384575a, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9203675553613839618, guid: 17b7ab8a32101994c80764524384575a, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 315374687253409948, guid: 17b7ab8a32101994c80764524384575a, type: 3}

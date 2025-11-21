@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+ï»¿using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -77,7 +77,7 @@ public class GameManager : Singleton<GameManager>
 
     public void GoToNextDungeonFloor()
     {
-        // ¾ÆÁ÷ º¸½ºÃþ ¾È °£ °æ¿ì
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
         if (CurrentDungeonFloor == 0)
         {
             CurrentDungeonFloor++;
@@ -86,7 +86,7 @@ public class GameManager : Singleton<GameManager>
             return;
         }
 
-        // º¸½ºÃþ Å¬¸®¾î ½Ã Çãºê·Î º¹±Í
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (CurrentDungeonFloor >= MaxDungeonFloor)
         {
             Debug.Log("Dungeon cleared! Returning to Hub.");
@@ -105,6 +105,7 @@ public class GameManager : Singleton<GameManager>
         Vector2 targetPos = SearchSpawnPoint();
         PlayerScript.Instance.SetPlayerPosition(targetPos);
         CameraManager.Instance.SetCameraPosition(targetPos);
+        CameraManager.Instance.StartCoroutine(CameraManager.Instance.DelayedSetCameraBound());
     }
     public void SetPlayerPos(Vector2 pos)
     {
@@ -120,5 +121,5 @@ public class GameManager : Singleton<GameManager>
         Application.Quit();
 #endif
     }
- 
+
 }

@@ -30,28 +30,35 @@ public class CameraManager : Singleton<CameraManager>
 
     private IEnumerator ApplyBoundNextFrame()
     {
-        yield return null; // collider 활성화 대기
+        yield return null;
 
-        var room = MapManager.Instance.GetCurrentRoom();
-        if (room == null) yield break;
+        Collider2D[] allColliders =
+            UnityEngine.Object.FindObjectsByType<Collider2D>(FindObjectsSortMode.None);
 
-        Transform boundaryObj = room.transform.Find("RoomBoundary");
+        Collider2D boundaryCollider = null;
 
-        Debug.Log("찾음");
+        foreach (var col in allColliders)
+        {
+            if (col.gameObject.name == "RoomBoundary")
+            {
+                boundaryCollider = col;
+                break;
+            }
+        }
 
-        if (boundaryObj == null) yield break;
+        if (boundaryCollider == null)
+        {
+            Debug.LogWarning("바운드 X");
+            yield break;
+        }
 
-        var col = boundaryObj.GetComponent<Collider2D>();
-        if (col == null) yield break;
-
-        //// collider가 활성화될 때까지 또 한 프레임 대기
-        //yield return null;
-
-        confiner.BoundingShape2D = col;
-        
+        confiner.BoundingShape2D = boundaryCollider;
         confiner.InvalidateBoundingShapeCache();
 
+        Debug.Log("Confiner 적용완");
     }
+
+
     public IEnumerator DelayedSetCameraBound()
     {
         yield return null; // 한 프레임 대기
